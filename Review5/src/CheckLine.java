@@ -36,16 +36,21 @@ public class CheckLine {
         System.out.print("Vertex 2 x-value:\t");
         y2L2 = Integer.parseInt(keyboard.nextLine());
 
+        double line1L = Line.length(x1L1, y1L1, x2L1, y2L1);
+        double line2L = Line.length(x1L2, y1L2, x2L2, y2L2);
+        double line1S = Line.slope(x1L1, y1L1, x2L1, y2L1);
+        double line2S = Line.slope(x1L2, y1L2, x2L2, y2L2);
+
         System.out.println("Results:");
-        if (Line.length(x1L1, y1L1, x2L1, y2L1) == Line.length(x1L2, y1L2, x2L2, y2L2)) {
+        if (line1L == line2L) {
             System.out.println("The two lines have the same length");
         } else {
             System.out.println("The two lines do not have the same length");
         }
 
-        if (Line.slope(x1L1, y1L1, x2L1, y2L1) == Line.slope(x1L2, y1L2, x2L2, y2L2)) {
+        if (line1S == line2S) {
             System.out.println("The two lines are parallel");
-        } else if (Line.slope(x1L1, y1L1, x2L1, y2L1) == -1 * Line.slope(x1L2, y1L2, x2L2, y2L2)) {
+        } else if (line1S == -1 * line2S) {
             System.out.println("The two lines are perpendicular");
         }
         keyboard.close();
