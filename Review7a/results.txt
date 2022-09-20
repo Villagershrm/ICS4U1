@@ -1,0 +1,18 @@
+Student 1 average: 0.0
+Student 2 average: 0.0
+Student 3 average: 0.0
+Student 4 average: 0.0
+Student 5 average: 0.0
+Student 6 average: 0.0
+Student 7 average: 0.0
+Student 8 average: 0.0
+Student 9 average: 0.0
+Student 10 average: 0.0
+
+Student with highest overall average: 1
+
+Class average of test 1: 0.0
+Class average of test 2: 0.0
+Class average of test 3: 0.0
+Class average of test 4: 0.0
+Class average of test 5: 0.0
