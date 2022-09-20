@@ -16,6 +16,8 @@
         {70, 70, 70, 70, 70},
         {80, 80, 80, 80, 80},
         {92, 93, 94, 95, 96}}
+    Note: What I was doing wrong was I was putting the .txt file in the same folder as the .java file
+    The .txt file should be in a folder one above the .java file
  */
 import java.io.*;
 
@@ -31,20 +33,15 @@ public class Q1Marks {
         double currentSum = 0;
         int readCounter = 0;
         String line;
-
-        
+     
         try {
-            System.out.println("Flag 1");
             BufferedReader in = new BufferedReader(new FileReader("marks.txt"));
-            //BufferedWriter out = new BufferedWriter(new FileWriter("results.txt"));
 
-            System.out.println("Flag 2");
             //Read the marks
             while ((line = in.readLine()) != null) {
                 temp = line.split(" ");
                 for (int j = 0; j < TESTS; j++) {
                     marks[readCounter][j] = Double.parseDouble(temp[j]);
-                    System.out.println(Double.parseDouble(temp[j]));
                 }
                 readCounter++;
             }
@@ -84,10 +81,9 @@ public class Q1Marks {
                 out.write("Class average of test " + (i + 1) + ": " + (classTotal / (1.0 * STUDENTS)) + "\n");
             }
 
-            //in.close();
             out.close();
         } catch (Exception e) {
-            System.out.println("Problem reading or writing.");
+            System.out.println("Problem writing");
         }
     }
 }
