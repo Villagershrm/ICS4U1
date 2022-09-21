@@ -20,20 +20,18 @@ public class Q2GroupOfNumbers {
                 sum = 0;
                 try {                    
                     //Read the numbers
-                    while (input != null) {
-                        input = in.readLine();
-                        if (input != null) {
-                            sum += Double.parseDouble(input);
-                        }
+                    while ((input = in.readLine()) != null) {
+                        sum += Double.parseDouble(input);
                     }
                 } catch (NumberFormatException nfe) {
-                    //Double.parseDouble failed to parse a double
+                    //Double.parseDouble() failed to parse a double
+                    //This makes a new group, as it won't try to parse the end of the file
                     System.out.println(groupName);
                     System.out.println("Sum: " + sum);
                     System.out.println();
                     groupName = input;
                 } catch (Exception e) {
-                    System.out.println("Something that should have happened has happened");
+                    System.out.println("Something that should not have happened has happened");
                 }
             }
             in.close();

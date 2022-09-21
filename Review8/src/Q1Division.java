@@ -23,6 +23,9 @@ public class Q1Division {
                 dev = keyboard.nextInt();
                 //Apparently dividing by 0.0 gives us Infinity, which I didn't know happened
                 System.out.println(num + " / " + dev + " is " + ((num) / dev));
+                //I could do another statement with double division
+                //If the program gets to this point, the denominator is not 0
+                
 
             } catch (InputMismatchException ime) { //nextInt() throws this when it reads not an int
                 input = keyboard.nextLine(); //Remember that when nextInt() throws an exception, it doesn't flush the stream
