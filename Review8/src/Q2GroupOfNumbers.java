@@ -22,10 +22,10 @@ public class Q2GroupOfNumbers {
                     //Read the numbers
                     while ((input = in.readLine()) != null) {
                         sum += Double.parseDouble(input);
-                    }
+                    } 
                 } catch (NumberFormatException nfe) {
                     //Double.parseDouble() failed to parse a double
-                    //This makes a new group, as it won't try to parse the end of the file
+                    //This marks a new group, as it won't try to parse the end of the file
                     System.out.println(groupName);
                     System.out.println("Sum: " + sum);
                     System.out.println();
