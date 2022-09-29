@@ -1,0 +1,4 @@
+A sort is considered to be stable if it always leaves values that are equal in the same order after the sort.
+
+A stable sort is more efficient than a non-stable sort because it doesn't waste any time/processing power 
+to unnecessarily swap the identical values
