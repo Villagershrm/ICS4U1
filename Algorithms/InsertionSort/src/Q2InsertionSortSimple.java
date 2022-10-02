@@ -12,22 +12,25 @@ public class Q2InsertionSortSimple {
      * I checked the pseudocode and my code is pretty similar, however my code is less efficient.
      * The pseudocode moves every value in front of the item (in its sorted position) to the right 1 index
      * and only moves the current value to its final correct spot.
+     * 
+     * My version of the code works similarly to the algorithm used in the visualiser.
      */
     public static void insertionSort(double[] array) {
         double temp;
         int index;
+        //double current;
         for (int i = 1; i < array.length; i++) { //Arrays of size 1 or 0 are always sorted
             index = i;
-            //double current = array[i];
+            //current = array[i];
             while (index > 0 && array[index] < array[index - 1]) {
                 //Swap, and maybe run this block of code again if we need to swap another time
                 temp = array[index];
                 array[index] = array[index - 1];
                 array[index - 1] = temp;
                 index--;
-                /* Better code
+                /* //Better code
                  * array[index] = array[index - 1];
-                 * j--;
+                 * index--;
                  */
             }
             //array[index] = current;

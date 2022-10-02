@@ -1,0 +1,23 @@
+public static void selectionSort(double[] array) {
+    int minIndex = -1;
+    double dblCurrentMin, temp;
+    for (int i = 0; i < array.length; i++) {
+        //Find the minimum value of this subset
+        dblCurrentMin = Double.MAX_VALUE;
+        for (int j = i; j < array.length; j++) {
+            if (array[j] < dblCurrentMin) {
+                //This is the new minimum value
+                dblCurrentMin = array[j];
+                minIndex = j;
+            }
+        }
+        //Swap the minimum value with the current index
+        temp = array[minIndex];
+        array[minIndex] = array[i];
+        array[i] = temp;
+    }
+}
+
+Currently, we can prevent unnecessarily swapping the same value by using an if statement.
+However, if we use an if statement to check, our program might be slower than before as we're checking each one 
+to see if it's the same value.
