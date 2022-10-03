@@ -5,8 +5,10 @@
 */
 public class Q5SelectionSortPartialList {
     /**
-     * @param k The number of numbers we have to sort
-     * @param array The array to sort data from
+     * @param k The number of (largest) numbers we have to sort
+     * @param array The array to sort data from.
+     * 
+     * @return The last k values of the array will be sorted.
      */
     public static void selectionSortPartial (double[] array, int k) {
         double currentLargest, temp;
@@ -21,7 +23,7 @@ public class Q5SelectionSortPartialList {
                     indexMax = j;
                 }
             }
-            
+
             //Swap largest value with current index
             temp = array[i];
             array[i] = array[indexMax];

@@ -1,0 +1,7 @@
+Cocktail sort: On odd passes, it bubble sorts upwards. On even passes, bubble sorts downwards
+2, 9, 4, 6, 1, 7, 8
+
+Start
+2, 4, 6, 1, 7, 8, 9
+1, 2, 4, 6, 7, 8, 9
+Done
