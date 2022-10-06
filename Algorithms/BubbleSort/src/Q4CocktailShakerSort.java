@@ -17,6 +17,7 @@ public class Q4CocktailShakerSort {
             //passes++;
             isSorted = true;
             if (isAscending) {
+                //Bubble sort up
                 for (int j = 0; j < i; j++) {
                     if (array[j] > array[j + 1]) {
                         isSorted = false;
@@ -26,6 +27,7 @@ public class Q4CocktailShakerSort {
                     }
                 }
             } else {
+                //Bubble sort down
                 for (int j = i; j > 0; j--) {
                     if (array[j] < array[j - 1]) {
                         isSorted = false;
