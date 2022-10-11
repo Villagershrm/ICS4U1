@@ -12,7 +12,7 @@ public class Palindrome {
         //Base case: String is length 1 or length 0
         if (s.length() <= 1) {
             return true;
-        } else if(s.charAt(0) == s.charAt(s.length() - 1)) {
+        } else if(s.charAt(0) == s.charAt(s.length() - 1)) { //Actually this "else" is not necessary
             //To approach base case, shrink the string size
             return isPalindrome (s.substring(1, s.length() - 1));
         }

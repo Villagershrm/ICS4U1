@@ -7,8 +7,7 @@ public class Q3PrimeNumber {
     public static boolean isPrime (int n) {
         if (n > 1)
             return isPrime (n, n - 1);
-        return false; // 1 is not prime, and 0 is technically not prime either
-        //Negatives are also not prime
+        return false; // 1, 0, and negative integers are not prime
     }
     
     private static boolean isPrime (int number, int divisor) {

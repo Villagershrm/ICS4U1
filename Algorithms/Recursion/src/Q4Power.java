@@ -7,6 +7,7 @@ public class Q4Power {
     public static double power(double x, int n) {
         //Assumptions made: n is greater than 0
         //This method is limited in the fact that n can only be a natural number, or stack overflow happens
+        //Checking for a negative n will significantly increase runtime
         if (n == 1) {
             return x;
         }

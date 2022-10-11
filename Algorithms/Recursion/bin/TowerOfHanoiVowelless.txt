@@ -10,7 +10,7 @@
  *  n my  p n  n, r curs  n  s th   as  st way t  d  th s
  */
 
- /*
+
  mp rt java.ut l.Scann r;
 
 publ c class T w r fHan   {
@@ -51,4 +51,3 @@ publ c class T w r fHan   {
         Syst m. ut.pr ntln("M n mum numb r  f m v s r qu r d: " + m v s);        
     }
 }
-*/
