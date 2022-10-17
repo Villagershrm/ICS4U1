@@ -8,7 +8,6 @@ public class Q6BinarySearch {
         return binarySearch(list, target, 0, list.length - 1);
     }
 
-    //Note: Should ask Ms. Lam about else if statements in methods
     public static int binarySearch(int[] list, int target, int lower, int higher) {
         //Base case: target does not exist in the array
         if (higher < lower) {

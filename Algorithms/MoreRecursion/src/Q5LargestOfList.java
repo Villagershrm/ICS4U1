@@ -5,8 +5,8 @@
  * Hint: Use a wrapper method
  */
 public class Q5LargestOfList {
-    public static int largest(int[] list, int start, int end) {
-        if (end - start == 0) {
+    private static int largest(int[] list, int start, int end) {
+        if (end <= start) {
             return list[start];
         }
         if (list[start] <= list[end]) {
