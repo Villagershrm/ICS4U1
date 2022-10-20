@@ -140,6 +140,21 @@ public class StringRecursion {
         return isPalindrome(s.toLowerCase());
     }
 
+    //Generate all strings of this length without a wrapper
+    //I failed.
+    /*
+    public static String generateAllString(int n) {
+        if (n <= 0) {
+            return "\n";
+        }
+        for (char c = 'a'; c <= 'z'; c++) {
+            System.out.print(generateAllString(n - 1) + c);
+        }
+
+        return "";
+    }
+    */
+    
     public static void main(String[] args) throws Exception {
         //System.out.println(length("Hello, World!"));
         //System.out.println(equalsIgnoreCase("Hello, World!", "hello, world!"));
@@ -147,6 +162,7 @@ public class StringRecursion {
         //System.out.println(equalsIgnoreVowel("kaaaaaaaaangaroo", "kongaroo"));
         //System.out.println(moveToEnd("How are you", 'o'));
         //System.out.println(reverse("Hello, world!")); 
-        System.out.println(isPalindrome("$ra?t! star!!!!"));
+        //System.out.println(isPalindrome("$ra?t! star!!!!"));
+        //System.out.println(generateAllString(2));
     }
 }
