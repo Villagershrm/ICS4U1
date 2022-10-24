@@ -4,6 +4,7 @@
  * Implement binary search using recursion
  */
 public class Q6BinarySearch {
+    //Wrapper
     public static int binarySearch(int[] list, int target) {
         return binarySearch(list, target, 0, list.length - 1);
     }
