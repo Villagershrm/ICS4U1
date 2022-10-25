@@ -7,6 +7,10 @@ public Fraction larger (Fraction other) {
     }
 }
 
+public double size() {
+    return Math.abs((double)num/den);
+}
+
 Suppose that p, q, and r are all objects of type Fraction. What fraction would 
 r represent after the statement
     r = p.larger(q);                is executed?
