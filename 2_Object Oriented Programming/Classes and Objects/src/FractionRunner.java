@@ -4,7 +4,7 @@ public class FractionRunner {
         Fraction fraction2 = new Fraction(1, 2);
         Fraction fraction3;
         Fraction fraction4;
-        Fraction fraction5 = new Fraction(1.234);
+        Fraction fraction5 = new Fraction(-0.98);
 
         fraction.reduce();
         fraction3 = fraction.plus(fraction2);
