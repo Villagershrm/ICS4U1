@@ -11,8 +11,7 @@ public double size() {
     return Math.abs((double)num/den);
 }
 
-Suppose that p, q, and r are all objects of type Fraction. What fraction would 
-r represent after the statement
+Suppose that p, q, and r are all objects of type Fraction. What fraction would r represent after the statement
     r = p.larger(q);                is executed?
 a) p represents 1/3 and q represents 4/5            4/5
 b) p represents 7/-5 and q represents -9/-7         7/-5

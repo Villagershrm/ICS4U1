@@ -4,23 +4,45 @@
  * Create a fraction object 
  * Important note: Objects are addresses pointing to the actual data, and work similarly to Strings
  * Actually a string is sort of an object
+ * 
+ * OOA is for longer projects, not contests.
  */
 
 public class Fraction {
     //Fields
     //Any function within this class can access these fields
     //I can also add an access control modifier to it such as public or private.
-    int num;
-    int den;
+    //Generally, fields are private, and should be modified or accessed using methods.
+    private int num;
+    private int den;
 
     //Constructor
+    //Constructors are accessed with the keyword "new" before the class name
+    //They are also always public, because private constructors are pretty useless
+    //i.e. Scanner keyboard = new Scanner(System.in);
     public Fraction(int num, int den) {
         this.num = num;
-        this.den = den;
+        setDen(den); //Special treatment for denominators
+    }
+
+    public Fraction(Fraction other) {
+        this.num = (other.getNum());
+        this.den = (other.getDen());
+    }
+
+    public Fraction (double d) {
+        String text = Double.toString(Math.abs(d));
+        int intIndex = text.indexOf('.');
+        int factor = (int) Math.pow(10, text.length() - intIndex - 1);
+
+        this.num = (int) (d * factor);
+        this.den = factor;
+
+        this.reduce();
     }
 
     //Default constructor
-    //If this was empty, that would be the hidden constructor java uses 
+    //If this was empty, that would be the hidden constructor java will use 
     //if there were no constructors in this code
     public Fraction() {
         num = 1;
@@ -45,12 +67,20 @@ public class Fraction {
         }
     }
 
+    public Fraction larger (Fraction other) {
+        if (size() >= other.size()) {
+            return this;
+        } else {
+            return other;
+        }
+    }
+
     //Q1
     //Multiply two fractions
     public Fraction times (Fraction other) {
         Fraction product = new Fraction();
         product.num = other.num * num;
-        product.den = other.den * num;
+        product.den = other.den * den;
 
         product.reduce();
 
@@ -61,7 +91,7 @@ public class Fraction {
     public Fraction plus (Fraction other) {
         Fraction addFraction = new Fraction();
         addFraction.num = num * other.den + den * other.num;
-        addFraction.den = num * other.den;
+        addFraction.den = den * other.den;
 
         addFraction.reduce();
 
@@ -106,10 +136,32 @@ public class Fraction {
             num *= -1;
         }
     }
-    public static void main(String[] args) throws Exception {
-        Fraction fraction = new Fraction(20, -25);
-        fraction.reduce();
 
-        System.out.println(fraction.num + " " + fraction.den);
+    //Accessors
+    public int getNum() {
+        return num;
+    }
+
+    public int getDen() {
+        return den;
+    }
+
+    //Mutators
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public void setDen(int den) {
+        if (den != 0) {
+            this.den = den;
+        } else {
+            this.den = 1;
+            System.out.println("You cannot set a denominator to a value of 0!");
+        }
+    }
+
+    public void setFraction(int num, int den) {
+        setNum(num);
+        setDen(den);
     }
 }
