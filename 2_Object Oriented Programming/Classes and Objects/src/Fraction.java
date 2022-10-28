@@ -49,9 +49,38 @@ public class Fraction {
         den = 1;
     }
 
+    //Accessors
+    public int getNum() {
+        return num;
+    }
+
+    public int getDen() {
+        return den;
+    }
+
+    //Mutators
+    public void setNum(int num) {
+        this.num = num;
+    }
+
+    public void setDen(int den) {
+        if (den != 0) {
+            this.den = den;
+        } else {
+            this.den = 1;
+            System.out.println("You cannot set a denominator to a value of 0!");
+        }
+    }
+
+    public void setFraction(int num, int den) {
+        this.num = num;
+        setDen(den);
+    }
+
+    //Methods
     //Return the magnitude of this fraction
     public double size () {
-        return (Math.abs((double)num / den));
+        return (Math.abs((double) num / den));
     }
 
     /**
@@ -137,31 +166,5 @@ public class Fraction {
         }
     }
 
-    //Accessors
-    public int getNum() {
-        return num;
-    }
 
-    public int getDen() {
-        return den;
-    }
-
-    //Mutators
-    public void setNum(int num) {
-        this.num = num;
-    }
-
-    public void setDen(int den) {
-        if (den != 0) {
-            this.den = den;
-        } else {
-            this.den = 1;
-            System.out.println("You cannot set a denominator to a value of 0!");
-        }
-    }
-
-    public void setFraction(int num, int den) {
-        setNum(num);
-        setDen(den);
-    }
 }
