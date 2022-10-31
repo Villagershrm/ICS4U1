@@ -1,0 +1,37 @@
+1. What is the difference between the declaration of a class method and that of an instance method?
+    The use of the keyword "static" placed before the return type
+
+2. Assume that methods in a class have been declared with the public
+modifier. From outside that class, how would we refer to
+a) a class method?
+b) an instance method?
+
+    ClassName.method()
+    ClassName object = new ClassName()
+    object.method()
+
+3. Write definitions for the following class methods that could be used in the 
+Fraction class.
+a) The method product should have two Fraction parameters. It should 
+return a value of type Fraction, the product of the parameters passed to 
+it.
+b) The method abs should have a single Fraction parameter. It should 
+return a value of type Fraction in which any negative fields in the 
+parameter have been replaced by their absolute values.
+c) The method isPositive should have one Fraction parameter. It 
+should return a boolean value: true if its parameter represents a 
+positive fraction and false otherwise.
+
+4. What is the difference between the declaration of a class field and that of an 
+instance field?
+    All instanced objects can see a changed class field, but they can only see changes in
+        their own instance fields
+    
+5. Assume the fields in a class have been declared with the public modifier. 
+From outside that class, how would we refer to 
+a) a class field?
+b) an instance field?
+
+    ClassName.field
+    ClassName object = new ClassName()
+    object.field

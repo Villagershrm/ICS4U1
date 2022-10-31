@@ -17,6 +17,8 @@ public class Fraction {
     //Generally, fields are private, and should be modified or accessed using methods.
     private int num;
     private int den;
+    private static final int defaultNum = 1;
+    private static final int defaultDen = 1;
 
     //Constructors
     //Constructors are accessed with the keyword "new" before the class name
@@ -47,8 +49,8 @@ public class Fraction {
     //If this was empty, that would be the hidden constructor java will use 
     //if there were no constructors in this code
     public Fraction() {
-        num = 1;
-        den = 1;
+        num = defaultNum;
+        den = defaultDen;
     }
 
     //Accessors
@@ -183,5 +185,53 @@ public class Fraction {
             return false;
         }
         
+    }
+
+    //Static methods belong to the entire class; they are called without an implicit object
+    //AKA "class method"
+    public static boolean isValid(Fraction test) {
+        if (test.getNum() != 0) {
+            return true;
+        }
+        return false;
+    }
+
+    public static Fraction times2 (Fraction x, Fraction y) {
+        Fraction product = new Fraction();
+        product.num = x.num * y.num;
+        product.den = x.den * y.den;
+
+        product.reduce();
+
+        return product;
+    }
+
+    public static Fraction abs (Fraction fraction) {
+        Fraction absFraction = new Fraction();
+        if (fraction.getNum() < 0) {
+            absFraction.setNum(fraction.getNum() * -1);
+        } else {
+            absFraction.setNum(fraction.getNum());
+        }
+
+        if (fraction.getDen() < 0) {
+            absFraction.setDen(fraction.getDen() * -1);
+        } else {
+            absFraction.setDen(fraction.getDen());
+        }
+
+        return absFraction;
+    }
+
+    public static Boolean isPositive(Fraction fraction) {
+        boolean positive = true;
+        if (fraction.getNum() < 0) {
+            positive = !positive;
+        }
+        if (fraction.getDen() < 0) {
+            positive = !positive;
+        }
+
+        return positive;
     }
 }
