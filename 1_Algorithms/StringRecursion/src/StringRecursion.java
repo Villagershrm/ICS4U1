@@ -64,7 +64,6 @@ public class StringRecursion {
             return true; //Base case: Strings are both empty
         }
         
-        //Note: Ask teacher about null values for char
         char c1 = 0;
         if (!s1.isEmpty()) {
             c1 = s1.charAt(0);

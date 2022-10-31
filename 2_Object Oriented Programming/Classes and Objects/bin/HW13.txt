@@ -1,0 +1,24 @@
+1. If p and q are both variables of type Fraction, under what circumstances 
+will the expression p == q have the value true?
+
+    p == q is true if and only if they are pointing towards the same memory address
+
+2. Suppose that p and q are both of type Fraction with p representing 2/3
+and q representing 1/6
+a) Draw a diagram like those shown in class to illustrate this situation.
+b) If the statement p = q; is executed, draw a diagram to illustrate the result.
+
+    p gets assigned to the same memory address located at the address that q points towards.
+    This means that modifying q also modifies p, and vice versa.
+    p represents 1/6 and q represents 1/6.
+
+3. Write a definition of an equals method for the Fraction class. Your 
+method should return true if and only if the Fraction objects being 
+compared represent equivalent fractions.
+
+    (Done)
+
+4. Write the toString method for the Fraction class which allows an Fraction 
+object to be outputted in the form <num>/<den>, e.g., 2/
+
+    (Done)

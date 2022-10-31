@@ -6,6 +6,8 @@
  * Actually a string is sort of an object
  * 
  * OOA is for longer projects, not contests.
+ * 
+ * //Order: Fields, constructors, accessors, mutators, then everything else (methods)
  */
 
 public class Fraction {
@@ -16,7 +18,7 @@ public class Fraction {
     private int num;
     private int den;
 
-    //Constructor
+    //Constructors
     //Constructors are accessed with the keyword "new" before the class name
     //They are also always public, because private constructors are pretty useless
     //i.e. Scanner keyboard = new Scanner(System.in);
@@ -166,5 +168,20 @@ public class Fraction {
         }
     }
 
+    //Note: This is implicitly called when doing sysout(fraction) or other times where the object
+    //      is converted into a string
+    public String toString() {
+        return (num + "/" + den);
+    }
 
+    //Returns true if the ratios of both fractions are the same
+    //Not implicitly called
+    public Boolean equals(Fraction other) {
+        if (other != null && size() == other.size()) {
+            return true;
+        } else {
+            return false;
+        }
+        
+    }
 }
