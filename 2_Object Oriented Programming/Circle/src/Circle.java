@@ -75,7 +75,7 @@ public class Circle {
     }
 
     public Circle smaller (Circle other) {
-        if (area() <= other.area()) {
+        if (other == null || area() <= other.area()) {
             return this;
         }
         return other;
@@ -87,14 +87,14 @@ public class Circle {
 
     // Returns true if and only if the implicit circle is fully inside the explicit circle
     public boolean isInside (Circle other) {
-        if (distance(other) + radius < other.getRadius()) {
+        if (other != null && distance(other) + radius < other.getRadius()) {
             return true;
         }
         return false;
     } 
 
     public boolean equals (Circle other) {
-        if (x == other.getX() && y == other.getY() && radius == other.getRadius()) {
+        if (other != null && x == other.getX() && y == other.getY() && radius == other.getRadius()) {
             return true;
         }
         return false;
