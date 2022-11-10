@@ -1,27 +1,49 @@
 public class Lab {
+    //Fields
     private static int maxCapacity;
     private int computersInstalled;
     private Computer[] computers;
 
+    //Constructor
     public Lab(int maxCapacity) {
         computers = new Computer[maxCapacity];
         setMaxCapacity(maxCapacity);
         computersInstalled = 0;
     }
 
+    //Mutator
     public static void setMaxCapacity(int capacity) {
         maxCapacity = capacity;
     }
 
+    //Methods
+
+    //I made some of the methods more robust in case one of the computers gets removed or something
+    /**
+     * Installs a computer at specified index
+     * @param serialNumber      Serial number of the installed computer
+     * @param manufacturer      Manufacturer of the installed computer
+     * @param yearMade          Year the installed computer was made
+     * @param yearOfPurchase    Year the installed computer was purchased
+     * @param processorSpeed    The processor speed of the installed computer in GHz
+     * @param ramGB             The RAM of the installed computer in GB
+     * @param warrantyExpYear   Expiry year of the installed computer's warranty
+     */
     public void installComputer(String serialNumber, String manufacturer, int yearMade, int yearOfPurchase, 
-                                Double processorSpeed, int ramGB, int warrantyExpYear, int index) {
-        if (computers[index] == null) {
-            computersInstalled++; // A new computer is installed if one didn't already exist
+                                double processorSpeed, int ramGB, int warrantyExpYear) {
+        if (computersInstalled >= maxCapacity) {
+            System.out.println("Maximum amount of computers installed");
+            return;
         }
-        computers[index] = new Computer(serialNumber, manufacturer, yearMade, yearOfPurchase, 
+        computers[computersInstalled] = new Computer(serialNumber, manufacturer, yearMade, yearOfPurchase, 
                                         processorSpeed, ramGB, warrantyExpYear);
+        computersInstalled++;
     }
 
+    /**
+     * 
+     * @return The average age of all installed computers as a Double
+     */
     public double averageAge() {
         int totalAge = 0;
         for (int i = 0; i < maxCapacity; i++) {
@@ -32,6 +54,10 @@ public class Lab {
         return ((double) totalAge) / computersInstalled;
     }
 
+    /**
+     * @return The computer in the lab with the lowest age. Returns DEFAULT_COMPUTER if no computers exist 
+     *         in the lab
+     */
     public Computer newestComputer() {
         Computer current = Computer.DEFAULT_COMPUTER;
         for (int i = 0; i < maxCapacity; i++) {
@@ -43,6 +69,10 @@ public class Lab {
         return current; // Returns default computer if no computers exist in the lab
     }
 
+    /**
+     * @return The computer in the lab with the greatest processing speed. Returns DEFAULT_COMPUTER if 
+     *         no computers exist in the lab
+     */
     public Computer fastestComputer() {
         Computer current = Computer.DEFAULT_COMPUTER;
         for (int i = 0; i < maxCapacity; i++) {
@@ -54,6 +84,10 @@ public class Lab {
         return current; // Returns default computer if no computers exist in the lab
     }
 
+    /**
+     * @return The computer in the lab with the greatest RAM. Returns DEFAULT_COMPUTER if no computers exist 
+     *          in the lab
+     */
     public Computer mostMemory() {
         Computer current = Computer.DEFAULT_COMPUTER;
         for (int i = 0; i < maxCapacity; i++) {
@@ -79,9 +113,10 @@ public class Lab {
         return count;
     }
 
-    // Create a list of computers that are expiring in the next year
-    //Approach: Count the number of computers whose warranty is about to expire, then go back and put
-    //          the computers in the array
+    /**
+     * 
+     * @return A Computer array that includes all computers whose warranties expire this year or next year
+     */
     public Computer[] warrantyAboutToExpire() {
         //Probably a lot easier with an ArrayList
         int count = 0;

@@ -28,7 +28,7 @@ public class LabTester {
                 processorSpeed = Double.parseDouble(buffer.readLine());
                 ramGB = Integer.parseInt(buffer.readLine());
                 warrantyExpYear = Integer.parseInt(buffer.readLine());
-                lab.installComputer(serialNumber, manufacturer, yearMade, yearOfPurchase, processorSpeed, ramGB, warrantyExpYear, i);
+                lab.installComputer(serialNumber, manufacturer, yearMade, yearOfPurchase, processorSpeed, ramGB, warrantyExpYear);
             }
 
             buffer.close();
@@ -40,7 +40,7 @@ public class LabTester {
         if (installed) {
             System.out.println();
 
-            System.out.println("Average age of the lab computers: " + lab.averageAge());
+            System.out.println("Average age of the lab computers: " + lab.averageAge() + " years");
 
             System.out.println();
 

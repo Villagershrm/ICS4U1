@@ -1,18 +1,21 @@
 public class Computer {
+    //Instance fields
     private String serialNumber;
     private String manufacturer;
     private int yearMade;
     private int yearOfPurchase;
-    private Double processorSpeed;
+    private double processorSpeed;
     private int ramGB;
     private int warrantyExpYear;
 
+    //Class fields
     private static final int CURRENT_YEAR = 2022;
+    private static final int ABOUT_TO_EXPIRE_YEARS = 1;
     public static final String DEFAULT_SERIAL_NUMBER = "";
     public static final String DEFAULT_MANUFACTURER = "N/A";
     public static final int DEFAULT_YEAR_MADE = 0;
     public static final int DEFAULT_YEAR_PURCHASED = 0;
-    public static final Double DEFAULT_PROCESSOR_SPEED = 0.0;
+    public static final double DEFAULT_PROCESSOR_SPEED = 0.0;
     public static final int DEFAULT_RAM = 0;
     public static final int DEFAULT_WARRANTY_EXPIRY = 0;
 
@@ -20,7 +23,8 @@ public class Computer {
     Computer.DEFAULT_MANUFACTURER, Computer.DEFAULT_YEAR_MADE, Computer.DEFAULT_YEAR_PURCHASED, 
     Computer.DEFAULT_PROCESSOR_SPEED, Computer.DEFAULT_RAM, Computer.DEFAULT_WARRANTY_EXPIRY);
 
-    public Computer(String serialNumber, String manufacturer, int yearMade, int yearOfPurchase, Double processorSpeed
+    //Constuctor
+    public Computer(String serialNumber, String manufacturer, int yearMade, int yearOfPurchase, double processorSpeed
                     , int ramGB, int warrantyExpYear) {
         this.serialNumber = serialNumber;
         this.manufacturer = manufacturer;
@@ -44,7 +48,7 @@ public class Computer {
     public void setYearOfPurchase(int yearOfPurchase) {
         this.yearOfPurchase = yearOfPurchase;
     }
-    public void setProcessorSpeed(Double processorSpeed) {
+    public void setProcessorSpeed(double processorSpeed) {
         this.processorSpeed = processorSpeed;
     }
     public void setRamGB(int ramGB) {
@@ -67,7 +71,7 @@ public class Computer {
     public int getYearOfPurchase() {
         return yearOfPurchase;
     }
-    public Double getProcessorSpeed() {
+    public double getProcessorSpeed() {
         return processorSpeed;
     }
     public int getRam() {
@@ -77,6 +81,7 @@ public class Computer {
         return warrantyExpYear;
     }
 
+    //Methods
     public Computer fasterComputer(Computer other) {
         if (processorSpeed >= other.getProcessorSpeed()) {
             return this;
@@ -117,7 +122,7 @@ public class Computer {
     }
 
     public boolean aboutToExpire() {
-        return (CURRENT_YEAR - warrantyExpYear <= 1);
+        return CURRENT_YEAR - warrantyExpYear <= ABOUT_TO_EXPIRE_YEARS;
     }
 
     public String toString() {

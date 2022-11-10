@@ -1,6 +1,6 @@
 public class SchoolBag {
     private String style;
-    private Binder[] binders = new Binder[2];
+    private Binder[] binders = new Binder[2]; //Used this a bit early but this is so much more convenient
 
     private static final double EMPTY_BAG_WEIGHT = 2000;
 
