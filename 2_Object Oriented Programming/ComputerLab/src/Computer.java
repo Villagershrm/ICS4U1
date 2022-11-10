@@ -106,7 +106,7 @@ public class Computer {
     }
 
     public boolean isMadeByManufacturer(String manufacturer) {
-        if (this.manufacturer.equals(manufacturer)) {
+        if (this.manufacturer.equalsIgnoreCase(manufacturer)) {
             return true;
         }
         return false;
