@@ -1,3 +1,7 @@
+/**
+ * File: Closet.java
+ * Description: This class represents a closet of shirts
+ */
 public class Closet {
     //Fields
     private int maxShirts;
@@ -47,7 +51,7 @@ public class Closet {
             shirts[index] = shirts[index + 1];
             numberOfShirts--; 
         }
-        //shirts[numberOfShirts] = null; //Not sure if this is necessary
+
         return true;
     }
 

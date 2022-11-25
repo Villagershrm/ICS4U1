@@ -1,0 +1,27 @@
+a i			
+b i			
+c ii			
+d iii			
+e iii			
+f iv			
+g i			
+h iii			
+
+i false			
+j true			
+k true			
+l true (overriding)	
+m true			
+n true			
+o false			
+p false (vehicle equals)	
+q true			
+r false			
+s false	(overloading calls vehicle method)		
+t true (overloading calls vehicle method)	
+u false (v3 is not a truck, so we go to parent)	
+v true	(if we want to use equals in truck, we cast v4 to a truck)		
+w false			
+x false (c1 is not a truck, so we go to parent)
+y true	(Car has no equals method, so we go to parent)	
+z false	(See note for y)	

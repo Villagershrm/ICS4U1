@@ -1,0 +1,32 @@
+1. 
+	a) Prints "A"
+	b) Prints "AB"
+	c) Prints "AB"
+
+2. 
+a)
+title should be declared in book
+timePeriod should be declared in history
+author should be declared in book
+
+b)
+public Book (String title, String author) {
+	this.title = title;
+	this.author = author;
+}
+
+d)
+public toString() {
+	return "Title: " + title + "\nAuthor: " + author;
+}
+
+c)
+public History (String title, String author, String timePeriod) {
+	super(title, author);
+	this.timePeriod = timePeriod;
+}
+
+e)
+public toString() {
+	return super.toString() + "\nTime period: " + timePeriod;
+}

@@ -1,3 +1,7 @@
+/**
+ * File: Computer.java
+ * Description: This class represents an individual computer
+ */ 
 public class Computer {
     //Instance fields
     private String serialNumber;
@@ -23,7 +27,7 @@ public class Computer {
     Computer.DEFAULT_MANUFACTURER, Computer.DEFAULT_YEAR_MADE, Computer.DEFAULT_YEAR_PURCHASED, 
     Computer.DEFAULT_PROCESSOR_SPEED, Computer.DEFAULT_RAM, Computer.DEFAULT_WARRANTY_EXPIRY);
 
-    //Constuctor
+    //Constructor
     public Computer(String serialNumber, String manufacturer, int yearMade, int yearOfPurchase, double processorSpeed
                     , int ramGB, int warrantyExpYear) {
         this.serialNumber = serialNumber;
@@ -82,6 +86,11 @@ public class Computer {
     }
 
     //Methods
+    /**
+     * 
+     * @param other Another computer
+     * @return The computer with the greater processor speed
+     */
     public Computer fasterComputer(Computer other) {
         if (processorSpeed >= other.getProcessorSpeed()) {
             return this;
@@ -89,6 +98,11 @@ public class Computer {
         return other;
     }
 
+    /**
+     * 
+     * @param other Another computer
+     * @return The computer with greater memory
+     */
     public Computer moreMemory(Computer other) {
         if (ramGB >= other.getRam()) {
             return this;
@@ -96,6 +110,11 @@ public class Computer {
         return other;
     }
 
+    /**
+     * 
+     * @param other Another computer
+     * @return The computer with the lower warranty expiration year
+     */
     public Computer warrantyExpiresSooner(Computer other) {
         if (warrantyExpYear <= other.getWarrantyExpYear()) {
             return this;
@@ -103,6 +122,11 @@ public class Computer {
         return other;
     }
 
+    /**
+     * 
+     * @param other Another computer
+     * @return The computer with the higher year made
+     */
     public Computer newer(Computer other) {
         if (yearMade >= other.getYearMade()) {
             return this;
@@ -110,6 +134,11 @@ public class Computer {
         return other;
     }
 
+    /**
+     * 
+     * @param manufacturer The manufacturer to look for
+     * @return True if manufacturer is the same as the implicit object's manufacturer, false otherwise
+     */
     public boolean isMadeByManufacturer(String manufacturer) {
         if (this.manufacturer.equalsIgnoreCase(manufacturer)) {
             return true;
@@ -117,14 +146,25 @@ public class Computer {
         return false;
     }
 
+    /**
+     * 
+     * @return Age of the implicit object
+     */
     public int age() {
         return CURRENT_YEAR - yearMade;
     }
 
+    /**
+     * 
+     * @return True if the computer's warranty is expiring within ABOUT_TO_EXPIRE_YEARS years, false otherwise
+     */
     public boolean aboutToExpire() {
         return CURRENT_YEAR - warrantyExpYear <= ABOUT_TO_EXPIRE_YEARS;
     }
 
+    /**
+     * @return A string representation of the implicit object
+     */
     public String toString() {
         String specs = "";
         specs += "Serial Number: " + serialNumber + "\n";

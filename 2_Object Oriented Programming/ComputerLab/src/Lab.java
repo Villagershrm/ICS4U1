@@ -1,10 +1,18 @@
+/**
+ * File: Lab.java
+ * Description: This class represents a lab of computers 
+ */
 public class Lab {
     //Fields
     private static int maxCapacity;
     private int computersInstalled;
     private Computer[] computers;
 
-    //Constructor
+    /**
+     * Constructor: 
+
+     * @param maxCapacity The maximum capacity of the computer lab
+     */
     public Lab(int maxCapacity) {
         computers = new Computer[maxCapacity];
         setMaxCapacity(maxCapacity);
@@ -18,7 +26,7 @@ public class Lab {
 
     //Methods
 
-    //I made some of the methods more robust in case one of the computers gets removed or something
+
     /**
      * Installs a computer at specified index
      * @param serialNumber      Serial number of the installed computer
@@ -28,28 +36,29 @@ public class Lab {
      * @param processorSpeed    The processor speed of the installed computer in GHz
      * @param ramGB             The RAM of the installed computer in GB
      * @param warrantyExpYear   Expiry year of the installed computer's warranty
+     * 
+     * @return true if the computer was successfully installed, false otherwise
      */
-    public void installComputer(String serialNumber, String manufacturer, int yearMade, int yearOfPurchase, 
+    public boolean installComputer(String serialNumber, String manufacturer, int yearMade, int yearOfPurchase, 
                                 double processorSpeed, int ramGB, int warrantyExpYear) {
         if (computersInstalled >= maxCapacity) {
             System.out.println("Maximum amount of computers installed");
-            return;
+            return false;
         }
         computers[computersInstalled] = new Computer(serialNumber, manufacturer, yearMade, yearOfPurchase, 
                                         processorSpeed, ramGB, warrantyExpYear);
         computersInstalled++;
+        return true;
     }
 
     /**
-     * 
+     * averageAge: Returns the average age of all installed computers as a Double
      * @return The average age of all installed computers as a Double
      */
     public double averageAge() {
         int totalAge = 0;
-        for (int i = 0; i < maxCapacity; i++) {
-            if (computers[i] != null) {
-                totalAge += computers[i].age();
-            }
+        for (int i = 0; i < computersInstalled; i++) {
+            totalAge += computers[i].age();
         }
         return ((double) totalAge) / computersInstalled;
     }
@@ -60,12 +69,10 @@ public class Lab {
      */
     public Computer newestComputer() {
         Computer current = Computer.DEFAULT_COMPUTER;
-        for (int i = 0; i < maxCapacity; i++) {
-            if (computers[i] != null) {
-                current = computers[i].newer(current);
-            }
+        for (int i = 0; i < computersInstalled; i++) {
+            current = computers[i].newer(current);
         }
-
+        
         return current; // Returns default computer if no computers exist in the lab
     }
 
@@ -75,10 +82,8 @@ public class Lab {
      */
     public Computer fastestComputer() {
         Computer current = Computer.DEFAULT_COMPUTER;
-        for (int i = 0; i < maxCapacity; i++) {
-            if (computers[i] != null) {
-                current = computers[i].fasterComputer(current);
-            }
+        for (int i = 0; i < computersInstalled; i++) {
+            current = computers[i].fasterComputer(current);
         }
 
         return current; // Returns default computer if no computers exist in the lab
@@ -90,10 +95,8 @@ public class Lab {
      */
     public Computer mostMemory() {
         Computer current = Computer.DEFAULT_COMPUTER;
-        for (int i = 0; i < maxCapacity; i++) {
-            if (computers[i] != null) {
-                current = computers[i].moreMemory(current);
-            }
+        for (int i = 0; i < computersInstalled; i++) {
+            current = computers[i].moreMemory(current);
         }
 
         return current; // Returns default computer if no computers exist in the lab
@@ -105,8 +108,8 @@ public class Lab {
      */
     public int manufacturerCount(String manufacturer) {
         int count = 0;
-        for (int i = 0; i < maxCapacity; i++) {
-            if (computers[i] != null && computers[i].isMadeByManufacturer(manufacturer)) {
+        for (int i = 0; i < computersInstalled; i++) {
+            if (computers[i].isMadeByManufacturer(manufacturer)) {
                 count++;
             }
         }
@@ -120,8 +123,8 @@ public class Lab {
     public Computer[] warrantyAboutToExpire() {
         //Probably a lot easier with an ArrayList
         int count = 0;
-        for (int i = 0; i < maxCapacity; i++) {
-            if (computers[i] != null && computers[i].aboutToExpire()) {
+        for (int i = 0; i < computersInstalled; i++) {
+            if (computers[i].aboutToExpire()) {
                 count++;
             }
         }
@@ -129,8 +132,8 @@ public class Lab {
         Computer[] computersAboutToExpire = new Computer[count];
         count = 0;
 
-        for (int i = 0; i < maxCapacity; i++) {
-            if (computers[i] != null && computers[i].aboutToExpire()) {
+        for (int i = 0; i < computersInstalled; i++) {
+            if (computers[i].aboutToExpire()) {
                 computersAboutToExpire[count] = computers[i];
                 count++; 
             }

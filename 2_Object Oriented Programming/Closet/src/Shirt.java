@@ -1,3 +1,7 @@
+/**
+ * File: Shirt.java
+ * Description: This class represents an individual shirt
+ */
 public class Shirt {
     //Fields
     private int size;
@@ -36,10 +40,19 @@ public class Shirt {
     }
 
     //Methods
+    /**
+     * 
+     * @return Age of the shirt
+     */
     public int age() {
         return CURRENT_YEAR - yearPurchased;
     }
 
+    /**
+     * 
+     * @param other shirt object
+     * @return Shirt object with the greater size
+     */
     public Shirt biggerShirt(Shirt other) {
         if (size >= other.getSize()) {
             return this;
@@ -47,6 +60,11 @@ public class Shirt {
         return other;
     }
 
+    /**
+     * 
+     * @param other shirt object
+     * @return Shirt object with the smaller age
+     */
     public Shirt newerShirt(Shirt other) {
         if (age() <= other.age()) {
             return this;
@@ -54,6 +72,11 @@ public class Shirt {
         return other;
     }
 
+    /**
+     * 
+     * @param other
+     * @return True if the size and colour of both the implicit and explicit objects are the same, false otherwise
+     */
     public boolean equals(Shirt other) {
         if (other != null && size == other.getSize() && colour.equals(other.getColour())) {
             return true;
@@ -61,6 +84,9 @@ public class Shirt {
         return false;
     }
 
+    /**
+     * @return A string representation of the implicit object
+     */
     public String toString() {
         return "Colour: " + colour + "\nSize: " + size + "\nYear Purchased: " + yearPurchased;
     }

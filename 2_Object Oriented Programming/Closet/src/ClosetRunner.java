@@ -1,3 +1,8 @@
+/**
+ * Wing Li
+ * November 14, 2022
+ * Description: Closet gaming
+ */
 import java.util.Scanner;
 import java.io.*;
 
