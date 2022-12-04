@@ -49,7 +49,16 @@ public class PrimarySpec {
         return true;
     }
 
+    //Returns true if the explicit PrimarySpec has a greater size than the implicit size
+    public boolean biggerSize(PrimarySpec other) {
+        return other.getSize() > size;
+    }
+
+    public boolean inZone(String zoneCode) {
+        return this.zoneCode.equals(zoneCode);
+    }
+
     public String toString() {
-        return "Zone code: " + zoneCode + "\nPrice: " + price + "\nSize: " + size + " sq ft\nBedrooms: " + numBedroom;
+        return "Zone code: " + zoneCode + "\nPrice: $" + price + "\nSize: " + size + " sq ft\nBedrooms: " + numBedroom;
     }
 }

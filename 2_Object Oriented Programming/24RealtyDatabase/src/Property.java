@@ -1,4 +1,5 @@
-public class Property {
+//Abstract class to prevent instantisating properties that are neither a house nor a condo
+public abstract class Property { 
     private int id;
     private String address;
     private PrimarySpec primSpec;
@@ -9,10 +10,6 @@ public class Property {
         this.address = address;
         this.primSpec = primSpec;
         this.secSpec = secSpec;
-    }
-
-    public int getId() {
-        return id;
     }
 
     public PrimarySpec getPrimarySpec() {
@@ -29,6 +26,17 @@ public class Property {
         }
 
         return true;
+    }
+
+    public boolean checkID(int id) {
+        return this.id == id;
+    }
+
+    public Property biggerProperty(Property other) {
+        if (primSpec.biggerSize(other.getPrimarySpec())) {
+            return other;
+        }
+        return this;
     }
 
     //ToString only returns id and address

@@ -1,0 +1,27 @@
+2
+
+house
+1
+15 Francine Drive
+N10
+800000
+3500
+4
+Y
+Y
+Y
+N
+Y
+
+condo
+2
+1415 2500 Bayview Ave
+N11
+350000
+1200
+2
+Y
+Y
+N
+Y
+N

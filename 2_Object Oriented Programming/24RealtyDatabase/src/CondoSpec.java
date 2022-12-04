@@ -1,6 +1,5 @@
 public class CondoSpec extends SecondarySpec {
-    private static final char AVAILABLE = 'Y';
-    //private static final char UNAVAILABLE = 'N';
+    private static final double SPECS_AVAILABLE = 5.0;
     private char pool;
     private char exercise;
     private char locker;
@@ -43,45 +42,29 @@ public class CondoSpec extends SecondarySpec {
         }
 
         CondoSpec other = (CondoSpec) otherSpec;
-        int wantCount = 0;
         int matchCount = 0;
         
-        if (other.getPool() == AVAILABLE) {
-            wantCount++;
-            if (pool == AVAILABLE) {
-                matchCount++;
-            }
+        if (other.getPool() == pool) {
+            matchCount++;
         }
 
-        if (other.getExercise() == AVAILABLE) {
-            wantCount++;
-            if (exercise == AVAILABLE) {
-                matchCount++;
-            }
+        if (other.getExercise() == exercise) {
+            matchCount++;
         }
 
-        if (other.getLocker() == AVAILABLE) {
-            wantCount++;
-            if (getLocker() == AVAILABLE) {
-                matchCount++;
-            }
+        if (other.getLocker() == locker) {
+            matchCount++;
         }
 
-        if (other.getHydro() == AVAILABLE) {
-            wantCount++;
-            if (hydro == AVAILABLE) {
-                matchCount++;
-            }
+        if (other.getHydro() == hydro) {
+            matchCount++;
         }
 
-        if (other.getCable() == AVAILABLE) {
-            wantCount++;
-            if (cable == AVAILABLE) {
-                matchCount++;
-            }
+        if (other.getCable() == cable) {
+            matchCount++;
         }
 
-        return matchCount / (1.0 * wantCount) >= percentMatch;
+        return matchCount / SPECS_AVAILABLE >= percentMatch / 100.0;
     }
 
     public String toString() {
