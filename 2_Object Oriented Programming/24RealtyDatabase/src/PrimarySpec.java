@@ -30,7 +30,7 @@ public class PrimarySpec {
     //Returns true if the implicit object satisfies the specs outlined by the explicit PrimarySpec
     //Returns false otherwise
     public boolean matchSpec(PrimarySpec other) {
-        if (!zoneCode.equals(other.zoneCode)) {
+        if (!zoneCode.equals(other.getZoneCode())) {
             return false;
         }
         
